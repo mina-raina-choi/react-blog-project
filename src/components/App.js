@@ -4,14 +4,14 @@ import { ListPage, PostPage, EditorPage, NotFoundPage } from 'pages';
 const App = () => {
     return (
         <div>
-        <Switch>
-            <Route exact path="/" component={ListPage}></Route>
-            <Route path="/page/:page" component={ListPage}></Route>
-            <Route path="/tag/:tag/:page?" component={ListPage}></Route>
-            <Route path="/post/:id" component={PostPage}></Route>
-            <Route path="/editor" component={EditorPage}></Route>
-            <Route component={ListPage}></Route>
-        </Switch>
+            <Switch>
+                <Route exact path="/" component={ListPage}></Route>
+                <Route path="/page/:page" component={ListPage}></Route>
+                <Route path="/tag/:tag/:page?" component={ListPage}></Route>
+                <Route path="/post/:id" component={PostPage}></Route>
+                <Route path="/editor" component={EditorPage}></Route>
+                <Route component={ListPage}></Route>
+            </Switch>
         </div>
     )
 }
