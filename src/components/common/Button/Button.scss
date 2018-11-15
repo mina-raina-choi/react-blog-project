@@ -1,0 +1,64 @@
+@import 'utils';
+
+.button {
+    padding: .25rem .5rem;
+    font-weight: 600;
+    font-size: .9rem;
+    color: white;
+    cursor: pointer;
+    user-select: none; //드래그방지
+    display: inline-flex;
+
+    &.default {
+        background: $oc-blue-6;
+        &:hover {
+            background: $oc-blue-5;
+        }
+        &:active {
+            background: $oc-blue-6;
+        }
+    }
+
+    &.gray {
+        background: $oc-gray-7;
+        &:hover {
+            background: $oc-gray-6;
+        }
+        &:active {
+            background: $oc-gray-7;
+        }
+    }
+
+    // 흰색테두리
+    &.outline {
+        border-radius: 2px;
+        border: 2px solid white;
+        &:hover {
+            background: white;
+            color: $oc-blue-6;
+        }
+        &:active {
+            background: rgba(255, 255, 255, 0.85);
+            border: 2px solid rgba(255, 255, 255, 0.85);
+        }
+    }
+
+    &:hover {
+        @include material-shadow(2, .5)
+    }
+
+    &.disabled {
+        background: $oc-gray-4;
+        color: $oc-gray-6;
+        cursor: default;
+        &:hover, &:active {
+            box-shadow: none;
+            background: $oc-gray-4;
+        }
+    }
+
+    // 오!! 버튼 두개이상있으면 중간여백!!
+    & + & {
+        margin-left: .5rem;
+    }
+}
